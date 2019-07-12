@@ -1,0 +1,57 @@
+ 
+<form [formGroup]="taskForm"  >
+  <div class='card'>
+      <div class='card-header'>
+          <h1>Add a Task</h1> 
+         </div>
+         <div class='card-body'> 
+           
+        <div class='row'>
+            <label>
+                Task:
+            <input type="text" formControlName="task">
+            </label>
+            </div>
+        <div class='row'>
+            <label>
+            Priority:
+           <input type="range" formControlName="priority"> 
+           
+              
+            </label>
+            </div>
+        <div class='row'> 
+          <label  >
+            Parent Task:
+            <input type="text" formControlName="parenttask">
+          </label>
+        </div>
+ 
+    <div class='row'>
+   <label>
+        Start Date:
+  <input type="text" formControlName="startdate">
+   </label>
+   </div>
+
+      <div class='row'>
+  <label>
+          End Date:
+  <input type="text" formControlName="enddate">
+  </label>
+  </div>
+
+ 
+<hr/>
+
+
+<button (click) = "addUpdateTask()" >Save Task </button>
+</div>
+</div>
+
+
+</form> 
+
+
+
+

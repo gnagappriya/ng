@@ -1,0 +1,77 @@
+ 
+<form [formGroup]="taskViewForm"  >
+    <div >
+       
+           <div class='card-body'> 
+             
+          <div class='row'>
+              <label>
+                  Task:
+              <input type="text" formControlName="task" style="width: 350px" >
+              </label>
+              <div  ><label> &nbsp; &nbsp;&nbsp;&nbsp;</label></div>
+            <label  >
+              Parent Task:
+              <input type="text" formControlName="parenttask" style="width: 350px">
+            </label>
+          </div>
+          <div class='row'>       &nbsp;         </div>
+         
+      <div class='row'>
+     <label>
+          Priority From:
+    <input type="text" formControlName="priorityfrom" style="width: 120px">
+     </label>
+     <label>
+       &nbsp; Priority To:
+  <input type="text" formControlName="priorityto" style="width: 120px">
+   </label>
+   <label>
+      &nbsp;Start Date:
+<input type="text" formControlName="startdate" style="width: 120px">
+ </label>
+ <label>
+     &nbsp;End Date:
+<input type="text" formControlName="enddate" style="width: 120px">
+</label>
+     </div>
+  
+  </div>
+  </div>
+  <hr/>
+ 
+ <div class='table-responsive'>
+  <table class='table'
+         >
+    <thead>
+      <tr>
+       
+        <th>Task</th>
+        <th>Parent</th>
+        <th>Priority</th>
+        <th>Start</th>
+        <th>End</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr  >
+            <td><img *ngIf='showImage'  [src]='emp.imgUrl' [title]='emp.title' /> </td>
+            <td>{{emp.empId |lowercase }}</td>
+            <td>{{emp.empName  }}</td>
+            <td>{{emp.address  }}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.salary }}</td>
+            <td><button (click) = "addUpdateTask()" >Save Task </button></td>
+            <td><button (click) = "addUpdateTask()" >Save Task </button></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+  
+  </form> 
+  
+  
+  
+  
+  

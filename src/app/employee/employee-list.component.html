@@ -1,0 +1,54 @@
+<div class='card'>
+    <div class='card-header'>
+     <h1>{{empListTitle}}</h1> 
+    </div>
+    <div class='card-body'>
+      <div class='row'>
+        <div class='col-md-2'>Filter by:</div>
+        <div class='col-md-4'>
+          <input type='text' [(ngModel)] = 'empFilter'
+                 />
+        </div>
+      </div>
+      <div class='row'
+           >
+        <div class='col-md-6'>
+          <h4>Filtered by: {{empFilter}}</h4>
+        </div>
+      </div>
+      <div class='table-responsive'>
+      <table class='table'
+           *ngIf='employees && employees.length'  >
+        <thead>
+          <tr>
+            <th>
+              <button class='btn btn-primary' 
+                      (click)='toggleImage()'> 
+                    {{showImage ?'Hide' : 'Show'}} Image 
+              </button>
+            </th>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let emp of employees' >
+                <td><img *ngIf='showImage'  [src]='emp.imgUrl' [title]='emp.title' /> </td>
+                <td>{{emp.empId |lowercase }}</td>
+                <td>{{emp.empName  }}</td>
+                <td>{{emp.address  }}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.salary }}</td>
+                <td>{{emp.rating}}</td>
+                
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+  

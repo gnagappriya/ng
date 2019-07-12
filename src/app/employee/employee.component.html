@@ -1,0 +1,58 @@
+ 
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()" >
+    <div class='card'>
+        <div class='card-header'>
+            <h1>{{pageTitle}}</h1> 
+           </div>
+           <div class='card-body'>       
+   <div class='row'> 
+    <label  >
+      Employee Id:
+      <input type="text" formControlName="empid">
+    </label>
+  </div>
+   <div class='row'>
+  
+    <label>
+      Employee Name:
+      <input type="text" formControlName="empname">
+    </label>
+  </div> 
+
+    <div class='row'>
+    <label>
+        Address:
+    <input type="text" formControlName="address">
+    </label>
+    </div>
+
+      <div class='row'>
+     <label>
+          Email:
+    <input type="text" formControlName="email">
+     </label>
+     </div>
+  
+        <div class='row'>
+    <label>
+            Salary:
+    <input type="text" formControlName="salary">
+    </label>
+    </div>
+  
+          <div class='row'>
+    <label>
+    Employee Rating:
+        <input type="text" formControlName="rating">
+    </label>
+    </div>
+  <hr/>
+  
+
+  <button (click) = "updateEmployee()" >Save Employee </button>
+  </div>
+ </div>
+  </form> 
+ 
+  
+
